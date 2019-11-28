@@ -3,26 +3,32 @@ import VueRouter from "vue-router";
 import Hello from '@/components/HelloWorld'
 import Register from "@/components/Register";
 import Login from "@/components/Login";
+import Songs from "@/components/Songs";
 
 Vue.use(VueRouter);
 
 const routes = [
-        {
-         path: '/',
-         name:  'root',
-         component: Hello
-        },
-        {
-         path: '/register',
-         name:  'register',
-         component: Register
-        },
-        {
-         path: '/login',
-         name:  'login',
-         component: Login
-        }
-    ];
+  {
+    path: "/",
+    name: "root",
+    component: Hello
+  },
+  {
+    path: "/register",
+    name: "register",
+    component: Register
+  },
+  {
+    path: "/login",
+    name: "login",
+    component: Login
+  },
+  {
+    path: "/songs",
+    name: "songs",
+    component: Songs
+  }
+];
 
 const router = new VueRouter({
     routes,
