@@ -1,15 +1,24 @@
 <template>
   <div id="app">
-    <router-view />
+    <v-app>
+      <PageHeader />
+      <main>
+        <v-container fluid>
+          <router-view />
+        </v-container>
+      </main>
+    </v-app>
+    
   </div>
 </template>
 
 <script>
-
+import PageHeader from '@/components/Header.vue';
 
 export default {
   name: 'app',
   components: {
+    PageHeader
   }
 }
 </script>
@@ -23,13 +32,5 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-.toolbar__title {
-  color: white;
-}
-.input-group--text-field input {
-  border-bottom: 1px solid darkgray;
-}
-.btn__content::before {
-  color: white;
-}
+
 </style>
