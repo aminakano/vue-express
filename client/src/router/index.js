@@ -4,6 +4,8 @@ import Hello from '@/components/HelloWorld'
 import Register from "@/components/Register";
 import Login from "@/components/Login";
 import Songs from "@/components/Songs";
+import CreateSong from "@/components/CreateSong";
+import ViewSong from "@/components/ViewSong";
 
 Vue.use(VueRouter);
 
@@ -27,6 +29,16 @@ const routes = [
     path: "/songs",
     name: "songs",
     component: Songs
+  },
+  {
+    path: "/songs/create",
+    name: "songs-create",
+    component: CreateSong
+  },
+  {
+    path: "/songs/:songId",
+    name: "song",
+    component: ViewSong
   }
 ];
 
@@ -36,18 +48,3 @@ const router = new VueRouter({
 });
 
 export default router;
-
-// export default new VueRouter({
-//     routes: [
-//         {
-//          path: '/',
-//          name:  'Hello',
-//          component: Hello
-//         },
-//         {
-//          path: '/register',
-//          name:  'register',
-//          component: Register
-//         }
-//     ]
-// })
