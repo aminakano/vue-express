@@ -63,7 +63,7 @@ export default {
       "$route.query.search": {
         immediate: true,
         async handler(value) {
-            this.songs = await SongsService.index(value);
+            this.songs = (await SongsService.index(value)).data;
         }
       }
     }
