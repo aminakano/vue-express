@@ -37,7 +37,6 @@
 
 <script>
 import AuthenticationService from '@/services/AuthenticationService';
-import Panel from '@/components/Panel';
 
 export default {
  data() {
@@ -62,9 +61,6 @@ export default {
      }
    }
  },
- components: {
-   Panel
- }
 
 }
 </script>
