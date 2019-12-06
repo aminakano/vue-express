@@ -17,7 +17,7 @@ export default {
       }
     },
     watch: {
-      search: _.debounce(async function search(val) {
+      search: _.debounce(async function search() {
         const route = {
           name: 'songs'
         }
@@ -27,7 +27,6 @@ export default {
             }
         }
         this.$router.push(route)
-          console.log(val)
       }, 700),
       "$route.query.search": {
           immediate: true,

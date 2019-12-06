@@ -1,0 +1,62 @@
+[
+    {
+        "title": "",
+        "artist": "",
+        "genre": "",
+        "album": "",
+        "albumImageUrl": "",
+        "youtubeId": "",
+        "lyrics": "",
+        "tab": ""
+    },
+    {
+        "title": "Float on",
+        "artist": "Modest Mouse",
+        "genre": "Alternative Rock",
+        "album": "bla bla bla",
+        "albumImageUrl": "https://images.genius.com/b9e89e719020a87737157ea4a644c70e.1000x1000x1.jpg",
+        "youtubeId": "CTAud5O7Qqk",
+        "lyrics": "Hi!",
+        "tab": "this is a tab"
+    },
+    {
+        "title": "hi",
+        "artist": "it's me",
+        "genre": "yo",
+        "album": "adfaf",
+        "albumImageUrl": null,
+        "youtubeId": null,
+        "lyrics": "asffasfdafdasf",
+        "tab": "asfadfa"
+    },
+    {
+        "title": "this is a song",
+        "artist": "hey",
+        "genre": "jjjjjjj",
+        "album": null,
+        "albumImageUrl": null,
+        "youtubeId": null,
+        "lyrics": "!!!!",
+        "tab": null
+    },
+    {
+        "title": "aaa",
+        "artist": "rrrr",
+        "genre": "ccc",
+        "album": "aaaa",
+        "albumImageUrl": "vvvv",
+        "youtubeId": "33333",
+        "lyrics": "ggggg",
+        "tab": "111111"
+    },
+    {
+        "title": "Mamma Mia",
+        "artist": "ABBA",
+        "genre": "Europop",
+        "album": "Mamma Mia!",
+        "albumImageUrl": "https://cps-static.rovicorp.com/3/JPG_500/MI0001/171/MI0001171422.jpg?partner=allrovi.com",
+        "youtubeId": "DUjB9LTtzGg",
+        "lyrics": "I've been cheated by you since I don't know when\nSo I made up my mind, it must come to an end\nLook at me now, will I ever learn?\nI don't know how but I suddenly lose control\nThere's a fire within my soul\nJust one look and I can hear a bell ring\nOne more look and I forget everything, whoaMamma mia, here I go again\nMy my, how can I resist you?\nMamma mia, does it show again?\nMy my, just how much I've missed youYes, I've been brokenhearted\nBlue since the day we parted\nWhy, why did I ever let you go?\nMamma mia, now I really know\nMy my, I could never let you go\nI've been angry and sad about things that you do\nI can't count all the times that I've told you we're through\nAnd when you go, when you slam the door\nI think you know that you won't be away too long\nYou know that I'm not that strong\nJust one look and I can hear a bell ring\nOne more look and I forget everything, whoaMamma mia, here I go again\nMy my, how can I resist you?\nMamma mia, does it show again?\nMy my, just how much I've missed youYes, I've been brokenhearted\nBlue since the day we parted\nWhy, why did I ever let you go?\nMamma mia, even if I say\nBye bye, leave me now or never\nMamma mia, it's a game we play\nBye bye doesn't mean forever\nMamma mia, here I go again\nMy my, how can I resist you?\nMamma mia, does it show again?\nMy my, just how much I've missed youYes, I've been brokenhearted\nBlue since the day we parted\nWhy, why did I ever let you go?\nMamma mia, now I really know\nMy my, I could never let you go",
+        "tab": "[Intro]\ne|----5---5---5---5---6---6---6---6---5---5---5---5---6---6---6---6-|\nB|------------------------------------------------------------------|\nG|--7---7---7---7---7---7---7---7---7---7---7---7---7---7---7---7---|\nD|------------------------------------------------------------------|\nA|------------------------------------------------------------------|\nE|------------------------------------------------------------------|\n\n   Play above twice.  On second pass, see below.\ne|------------------------------------------------------------------|\nB|--------7-------------7-5-7-575---------7-------------7-5-7-575---|\nG|----4-7-------------------------7---4-7-------------------------7-|\nD|--7-------------------------------7-------------------------------|\nA|------------------------------------------------------------------|\nE|------------------------------------------------------------------|\n\n---  incidental stuff ---\nLick #1:        Lick #2\ne|-----------   -----------|\nB|--7-5^5/10-   --7-5^7/11-|\nG|-----------   -----------|\nD|-----------   -----------|\nA|-----------   -----------|\nE|-----------   -----------|\n\n Lick #3:     slow vibrato      Lick #4  v-----------| Bend note, strike it, release\ne|----------------------------     ---(14)12-------------|\nB|--3--5--7--7(8)7(8)7(8)7(8)-     ----------15-14-12----|\nG|----------------------------     ----------------------|\nD|----------------------------     ----------------------|\nA|----------------------------     ----------------------|\nE|----------------------------     ----------------------|\n\n Dmin#5:\ne|-2-\nB|-3-\nG|-3-\nD|-0-\nA|---\nE|---"
+    }
+]

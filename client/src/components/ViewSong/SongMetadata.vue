@@ -16,8 +16,10 @@
               dark
               :to="{
                 name:'song-edit',
-                params: {
+                params() {
+                  return {
                   songId: song.id
+                  }
                 }}">
                 Edit
             </v-btn>              
