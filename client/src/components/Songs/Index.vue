@@ -23,11 +23,6 @@ export default {
     },
     async mounted() {
         this.songs = (await SongsService.index()).data;
-    },
-    methods: {
-        navigateTo (route) {
-            this.$router.push(route)
-        }
     }
 }
 </script>
