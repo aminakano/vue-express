@@ -24,18 +24,18 @@
               Edit
           </v-btn>              
           <v-btn
-            v-if="isUserLoggedIn && !isBookmarked" 
+            v-if="isUserLoggedIn && !bookmark" 
             class="cyan"
             dark
-            @click="bookmark">
-              Bookmark
+            @click="setAsBookmark">
+              Set As Bookmark
           </v-btn>              
           <v-btn 
-            v-if="isUserLoggedIn && isBookmarked" 
+            v-if="isUserLoggedIn && bookmark" 
             class="cyan"
             dark
-            @click="unbookmark">
-              Unbookmark
+            @click="unsetAsBookmark">
+              Unset As Bookmark
           </v-btn>              
         </v-flex>
         <v-flex xs6>
@@ -57,7 +57,7 @@ export default {
     ],
   data() {
     return {
-      isBookmarked: false
+      bookmark: null
     }
   },
   computed: {
@@ -70,33 +70,31 @@ export default {
       return;
     }
     try {
-      const bookmark = (await BookmarksService.index({
-        songId: this.$store.state.route.params.songId,
-        // songId: this.song.id,
+      this.bookmark = (await BookmarksService.index({
+        // songId: this.$store.state.route.params.songId,
+        songId: this.song.id,
         userId: this.$store.state.user.id 
       })).data;
-      this.isBookmarked = !!bookmark;
     } catch(err) {
-      console.log(err);
+      console.log("error: ",err);
     }
   },
   methods: {
-    async bookmark() {
+    async setAsBookmark() {
       try {
-        await BookmarksService.post({
+        this.bookmark = (await BookmarksService.post({
          songId: this.song.id,
          userId: this.$store.state.user.id 
-       }).data;
+       })).data;
+      console.log("bookmark:",this.bookmark)
       } catch(err) {
         console.log(err)
       }
     },
-    async unbookmark() {
+    async unsetAsBookmark() {
       try {
-        await BookmarksService.delete({
-         songId: this.song.id,
-         userId: this.$store.state.user.id 
-       });
+        await BookmarksService.delete(this.bookmark.id);
+       this.bookmark = null;
       } catch(err) {
         console.log(err)
       }
