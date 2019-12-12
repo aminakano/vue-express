@@ -1,18 +1,34 @@
 const { Bookmark } = require("../models");
-
+const { Song } = require("../models");
 module.exports = {
   async index(req, res) {
     try {
       const { songId, userId } = req.query;
-      const bookmark = await Bookmark.findOne({
-          where: {
-            songId: songId,
-            userId: userId
+      const where = {
+        UserId: userId
+      }
+      if(songId) {
+        where.SongId = songId
+      }
+      const bookmarks = await Bookmark.findAll({
+        where: where,
+        include: [
+          {
+            model: Song
           }
-      })
-      res.send(bookmark);
-      console.log(req)
+        ]
+      }).map(bookmark => bookmark.toJSON())
+        .map(bookmark =>
+          Object.assign(
+            {
+              bookmarkId: bookmark.id
+            },
+            bookmark.Song
+          )
+        );
+      res.send(bookmarks);
     } catch (err) {
+      console.log(err)
       res.status(500).send({
         error: "An error has occured trying to fetch the bookmark."
       });
@@ -52,6 +68,7 @@ module.exports = {
       await bookmark.destroy();
       res.send(bookmark);
     } catch (err) {
+      console.log(err)
       res.status(500).send({
         error: "An error has occured trying to delete the bookmark."
       });
