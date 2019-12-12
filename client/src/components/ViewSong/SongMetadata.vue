@@ -1,48 +1,48 @@
 <template>
   <panel title="Song Metadata">
     <v-layout>
-        <v-flex xs6>
-          <div class="song-title">
-            {{song.title}}
-          </div>
-          <div class="song-artist">
-            {{song.artist}}
-          </div>
-          <div class="song-genre">
-            {{song.genre}}
-          </div>            
-          <v-btn 
-            class="cyan"
-            dark
-            :to="{
-              name:'song-edit',
-              params() {
-                return {
-                songId: song.id
-                }
-              }}">
-              Edit
-          </v-btn>              
-          <v-btn
-            v-if="isUserLoggedIn && !bookmark" 
-            class="cyan"
-            dark
-            @click="setAsBookmark">
-              Set As Bookmark
-          </v-btn>              
-          <v-btn 
-            v-if="isUserLoggedIn && bookmark" 
-            class="cyan"
-            dark
-            @click="unsetAsBookmark">
-              Unset As Bookmark
-          </v-btn>              
-        </v-flex>
-        <v-flex xs6>
-          <img :src="song.albumImageUrl" alt="" class="album-image">
-          <br>
-          {{song.album}}
-        </v-flex>
+      <v-flex xs6>
+        <div class="song-title">
+          {{song.title}}
+        </div>
+        <div class="song-artist">
+          {{song.artist}}
+        </div>
+        <div class="song-genre">
+          {{song.genre}}
+        </div>            
+        <v-btn 
+          class="cyan"
+          dark
+          :to="{
+            name:'song-edit',
+            params() {
+              return {
+              songId: song.id
+              }
+            }}">
+            Edit
+        </v-btn>              
+        <v-btn
+          v-if="isUserLoggedIn && !bookmark" 
+          class="cyan"
+          dark
+          @click="setAsBookmark">
+            Set As Bookmark
+        </v-btn>              
+        <v-btn 
+          v-if="isUserLoggedIn && bookmark" 
+          class="cyan"
+          dark
+          @click="unsetAsBookmark">
+            Unset As Bookmark
+        </v-btn>              
+      </v-flex>
+      <v-flex xs6>
+        <img :src="song.albumImageUrl" alt="" class="album-image">
+        <br>
+        {{song.album}}
+      </v-flex>
     </v-layout>
   </panel>
 </template>
@@ -65,18 +65,20 @@ export default {
       "isUserLoggedIn"
     ])
   },
-  async mounted() {
-    if(!this.isUserLoggedIn){
-      return;
-    }
-    try {
-      this.bookmark = (await BookmarksService.index({
-        // songId: this.$store.state.route.params.songId,
-        songId: this.song.id,
-        userId: this.$store.state.user.id 
-      })).data;
-    } catch(err) {
-      console.log("error: ",err);
+  watch: {
+    async song() {
+      if(!this.isUserLoggedIn){
+        return;
+      }
+      try {
+        this.bookmark = (await BookmarksService.index({
+          songId: this.$store.state.route.params.songId,
+          // songId: this.song.id,
+          userId: this.$store.state.user.id 
+        })).data;
+      } catch(err) {
+        console.log(err);
+      }
     }
   },
   methods: {

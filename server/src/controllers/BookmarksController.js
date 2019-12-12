@@ -4,8 +4,6 @@ module.exports = {
   async index(req, res) {
     try {
       const { songId, userId } = req.query;
-      // const songId = req.body.params.songId;
-      // const userId = req.body.params.userId;
       const bookmark = await Bookmark.findOne({
           where: {
             songId: songId,
@@ -13,6 +11,7 @@ module.exports = {
           }
       })
       res.send(bookmark);
+      console.log(req)
     } catch (err) {
       res.status(500).send({
         error: "An error has occured trying to fetch the bookmark."
@@ -21,25 +20,27 @@ module.exports = {
   },
   async post(req, res) {
     try {
-          // const { songId, userId } = req.body;
-        const { songId } = req.body;
-        const userId = req.user.id;
+          const { songId, userId } = req.body;
+        // const { songId } = req.body.params.songId;
+        // const userId = req.body.params.userId;
         const bookmark = await Bookmark.findOne({
           where: {
             SongId: songId,
             UserId: userId
           }
         });
-        console.log("query: ",songId, userId)
         if (bookmark) {
           return res.status(400).send({
             error: "You already have this set as a bookmark."
           });
         }
-        const newBookmark = await Bookmark.create(bookmark);
+        const newBookmark = await Bookmark.create({
+          SongId: songId,
+          UserId: userId
+        });
         res.send(newBookmark);
       } catch (err) {
-      res.status(500).send({
+        res.status(500).send({
         error: "An error has occured trying to create the bookmark."
         });
       }
