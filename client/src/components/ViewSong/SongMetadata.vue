@@ -75,7 +75,6 @@ export default {
         const bookmarks = (await BookmarksService.index({
           songId: this.$store.state.route.params.songId,
           // songId: this.song.id,
-          userId: this.user.id 
         })).data;
         if(bookmarks.length) {
           this.bookmark = bookmarks[0];
@@ -89,10 +88,8 @@ export default {
     async setAsBookmark() {
       try {
         this.bookmark = (await BookmarksService.post({
-         songId: this.song.id,
-         userId: this.$store.state.user.id 
+         songId: this.song.id
        })).data;
-      console.log("bookmark:",this.bookmark)
       } catch(err) {
         console.log(err)
       }
@@ -110,23 +107,22 @@ export default {
 </script>
 
 <style scoped>
-    .song {
-        padding: 20px;
-        height: 330px;
-        overflow: hidden;
-    }
-    .song-title {
-        font-size: 30px;
-    }
-    .song-artist {
-        font-size: 24px;
-    }
-    .song-genre {
-        font-size: 18px;
-    }
-    .album-image {
-        width: 70%;
-        margin: 0 auto;
-    }
-
+.song {
+    padding: 20px;
+    height: 330px;
+    overflow: hidden;
+}
+.song-title {
+    font-size: 30px;
+}
+.song-artist {
+    font-size: 24px;
+}
+.song-genre {
+    font-size: 18px;
+}
+.album-image {
+    width: 70%;
+    margin: 0 auto;
+}
 </style>

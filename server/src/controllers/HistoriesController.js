@@ -1,10 +1,11 @@
 const { History, Song } = require("../models");
+const _ = require('lodash');
 
 module.exports = {
   async index(req, res) {
     try {
-      const { userId } = req.query;
-        const histories = await History.findAll({
+      const userId = req.user.id;
+      const histories = await History.findAll({
         where: {
           UserId: userId
         },
@@ -13,15 +14,14 @@ module.exports = {
             model: Song
           }
         ]
-      })
-        .map(history => history.toJSON())
+      }).map(history => history.toJSON())
         .map(history =>
           Object.assign(
             {},
             history.Song,
             history
           ));
-      res.send(histories);
+      res.send(_.uniqBy(histories, history => history.SongId));
     } catch (err) {
       console.log(err)
       res.status(500).send({
@@ -31,7 +31,8 @@ module.exports = {
   },
   async post(req, res) {
     try {
-        const { songId, userId } = req.body;
+        const { songId } = req.body;
+        const userId = req.user.id;
         const history = await History.create({
           SongId: songId,
           UserId: userId

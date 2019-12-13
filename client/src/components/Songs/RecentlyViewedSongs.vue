@@ -36,7 +36,7 @@ export default {
         }
       ],
       pagination: {
-        sortBy: "date",
+        sortBy: "createdAt",
         descending: true
       },
       histories: []
@@ -50,9 +50,7 @@ export default {
   },
   async mounted() {
     if(this.isUserLoggedIn){
-      this.histories = (await SongHistoryService.index({
-          userId: this.user.id 
-        })).data;
+      this.histories = (await SongHistoryService.index()).data;
       }
   }
 }
