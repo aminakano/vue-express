@@ -1,5 +1,5 @@
 <template>
-<div>
+ <div>
   <v-layout>
     <v-flex xs6>
       <song-metadata :song="song" />

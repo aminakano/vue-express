@@ -9,7 +9,7 @@
     absolute
     right
     middle
-    class="cyan accent-2">
+    class="pink accent-1">
     <v-icon>add</v-icon>
     </v-btn>
     <div
@@ -28,7 +28,7 @@
             {{song.genre}}
         </div>
         <v-btn 
-            class="cyan"
+            class="pink lighten-2"
             dark
             :to="{
               name:'song',

@@ -9,11 +9,9 @@
 
 <script>
 export default {
-    props: [
-     'song'
-     ],
-
-    
+  props: [
+    'song'
+    ]   
 }
 </script>
 
@@ -27,5 +25,6 @@ textarea {
   border-color: transparent;
   overflow: auto;
   padding: 40px;
+  outline: none;
 }
 </style>

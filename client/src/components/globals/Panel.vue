@@ -1,7 +1,7 @@
 <template>
 <v-layout column>
     <div class="white elevation-2">
-        <v-toolbar flat dense class="cyan" dark>
+        <v-toolbar flat dense class="pink lighten-2" dark>
             <v-toolbar-title>{{title}}</v-toolbar-title>
             <slot name="action" />
         </v-toolbar>

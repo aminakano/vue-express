@@ -67,7 +67,7 @@
                 {{error}}
             </div>
             <v-btn 
-                class="cyan"
+                class="pink lighten-2"
                 dark
                 @click="save">
                 Save Song

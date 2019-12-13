@@ -12,7 +12,7 @@
           {{song.genre}}
         </div>            
         <v-btn 
-          class="cyan"
+          class="pink lighten-2"
           dark
           :to="{
             name:'song-edit',
@@ -25,14 +25,14 @@
         </v-btn>              
         <v-btn
           v-if="isUserLoggedIn && !bookmark" 
-          class="cyan"
+          class="pink lighten-2"
           dark
           @click="setAsBookmark">
             Set As Bookmark
         </v-btn>              
         <v-btn 
           v-if="isUserLoggedIn && bookmark" 
-          class="cyan"
+          class="pink lighten-2"
           dark
           @click="unsetAsBookmark">
             Unset As Bookmark
