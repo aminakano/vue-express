@@ -1,5 +1,9 @@
 # Full-stack app with Vue and Express
-Created with `Vue`, `TypeScript`, `Sass` & `Express.js`
+### Tabtracker 
+#### Sign up / Log in
+#### Store your favourite songs' details including guitar tabs
+#### Search
+
 ## Project setup
 ```
 npm install
