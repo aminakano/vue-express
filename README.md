@@ -1,5 +1,5 @@
 # Full-stack app with Vue and Express
-
+Created with `Vue`, `TypeScript`, `Sass` & `Express.js`
 ## Project setup
 ```
 npm install
