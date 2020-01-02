@@ -1,3 +1,7 @@
 Another file!!
 I have to add some more to this file.
+<<<<<<< .merge_file_90N1Zm
 Ben was here!
+=======
+Ami was here...
+>>>>>>> .merge_file_bPYMCJ
