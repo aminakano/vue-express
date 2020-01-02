@@ -1,6 +1,10 @@
 Hello World!
 Here's an important bug fix.
+<<<<<<< Updated upstream
 Here's a new bug fix.
+=======
+I am still working on something.
+>>>>>>> Stashed changes
 This line is before the second line --Ben.
 This is the second line.
 Hi, my name is Ami.
