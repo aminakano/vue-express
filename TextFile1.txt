@@ -1,5 +1,6 @@
 Hello World!
 Here's an important bug fix.
+Here's a new bug fix.
 This line is before the second line --Ben.
 This is the second line.
 Hi, my name is Ami.
